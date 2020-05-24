@@ -79,3 +79,65 @@ div#home p.lide {
 div#home p:last-child {
   font-size: 18px;
 }
+
+div#finale {
+  display: none;
+}
+
+div#question  {
+  display: none;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+div#question div#box {
+  background-color: #FFF1CE;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div#question div#box p {
+  font-size: 32px;
+  text-align: center;
+  padding: 10px;
+}
+
+div#question div#buttons {
+  height: 160px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+div#question div#buttons button {
+  border-radius: 50%;
+  padding: 0;
+  display: block;
+  border: none;
+  background-color: grey;
+  height: 140px;
+  width: 140px;
+  font-size: 82px;
+  box-sizing: border-box;  
+  outline: none;
+}
+
+div#question div#buttons button.a {
+  background-color: #F6C6AA;
+  color: #B21E15;
+}
+
+div#question div#buttons button.b {
+  background-color: #CCF6AA;
+  color: #015009;
+}
+
+div#question div#buttons button.descriptive{
+  font-size: 16px;
+}
+
