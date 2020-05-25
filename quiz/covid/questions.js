@@ -1,9 +1,9 @@
-const questions = [
+export const questions = [
   {
     question: 'O coronavírus pode ser transmitido através de um aperto de mão.',
     options: [0, 1],
     answer: 1,
-    explanation: 'O coronavírus se transmite por gotículas de saliva através do espirro, tosse ou catarro,que pode ocorrer, por exemplo, por aperto de mão ou toque e contato com objetos e superfícies contaminadas.'
+    explanation: 'O coronavírus se transmite por gotículas de saliva através do espirro,tosse ou catarro,que pode ocorrer, por exemplo, por aperto de mão ou toque e contato com objetos e superfícies contaminadas.'
   },
   {
     question: 'Para evitar a transmissão do coronavírus, não é recomendado tomar chimarrão.',
@@ -123,5 +123,3 @@ const questions = [
     explanation: 'Estudos demonstraram que o vírus da COVID-19 pode sobreviver por até 72 horas em plástico e aço inoxidável, menos de 4 horas em cobre e menos de 24 horas em papelão. Por isso a limpeza dos objetos é fundamental!'
   },
 ];
-
-export default questions;

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Quiz Covid - DAS</title>
+  
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -11,6 +14,7 @@
   <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,22 +26,34 @@
     <main>
       <div id="home">
         <h1>Quiz Covid-19</h1>
-        <p class="lide">Teste seus conhecimentos sobre a doença e as medidas de prevenção.</p>
-        <p>O objetivo desse aplicativo é proporcionar uma forma divertida e interativa para testar e adquirir conhecimentos sobre a
-        COVID-19 e suas medidas de prevenção, incentivando a adoção das práticas corretas no cotidiano das pessoas.</p>
+        <p class="lide">
+          Teste seus conhecimentos sobre a doença e as medidas de prevenção.</p>
+        <p>
+          O objetivo desse <i>quiz</i> é proporcionar uma forma divertida e interativa para testar e adquirir conhecimentos sobre a COVID-19 e suas medidas de prevenção, incentivando a adoção das práticas corretas no cotidiano das pessoas.
+        </p>
       </div>
-      <div id="question">
+      <div id="question" class="hide">
         <div></div>
         <div id="box">
           <p>O coronavírus pode ser transmitido através de um aperto de mão.</p>
         </div>
         <div id="buttons">
-          <button class="a">✗</button>
-          <button class="b">✓</button>
+          <button class="a option">✗</button>
+          <button class="b option">✓</button>
         </div>
       </div>
-      <div id="finale">
-      
+      <div id="answer" class="hide">
+        <div class="assertive">
+          <div class="right">✓</div>
+          <p>O coronavírus pode ser transmitido através de um aperto de mão.</p>
+        </div>
+        <p class="response">É isso aí! 😉</p>
+        <p class="explanation">
+          O coronavírus se transmite por gotículas de saliva através do espirro, tosse ou catarro,que pode ocorrer, por exemplo, por aperto de mão ou toque e contato com objetos e superfícies contaminadas.
+        </p>
+      </div>
+      <div id="finale" class="hide">
+        
       </div>
     </main>
     <footer>

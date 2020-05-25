@@ -1,62 +1,97 @@
-import questions from './questions.js';
+import {questions as originalQuestions} from './questions.js';
 import {right, wrong} from './anwers.js';
+
+const questions = originalQuestions.filter(q => q.options[0] === 0);
 
 const Scene = {
   Home: document.querySelector("div#home"),
   Question: document.querySelector("div#question"),
+  Answer: document.querySelector("div#answer"),
   Finale: document.querySelector("div#finale")
 };
 
 const Element = {
-  Question: Scene.Question.querySelector('p')
+  Question: Scene.Question.querySelector('p'),
+  Footer: document.querySelector('footer')
 };
 
-const Footer = document.querySelector('footer');
+const Button = {
+  Footer: document.querySelector('button#comecar'),
+  A: document.querySelector('button.a'),
+  B: document.querySelector('button.b')
+};
 
-const buttonComecar = document.querySelector('button#comecar');
-
-const buttonA = document.querySelector('button.a');
-const buttonB = document.querySelector('button.b');
-
-let q = 0;
-
-buttonComecar.addEventListener('click', e => {
-  Scene.Home.style.display = 'none';
-  Footer.style.display = 'none';
-  Scene.Question.style.display = 'flex';
-
+const comecar = e => {
+  // shuffle questions
   for (let i = 0; i < questions.length; i++) {
     const j = Math.floor(Math.random() * questions.length);
     [questions[i], questions[j]] = [questions[j], questions[i]];
   }
-
-
+  // console.log(questions.map(q => q.question));
+  Button.Footer.removeEventListener('click', comecar);
+  Button.Footer.addEventListener('click', nextQuestion);
   nextQuestion();
-});
+};
+
+Button.Footer.addEventListener('click', comecar);
+
+let q = -1;
 
 function nextQuestion() {
-  const question = questions[q];
-  Element.Question.textContent = question.question;
+  q += 1; // next question
+  Scene.Home.classList.add('hide'); // hide Home
+  Scene.Answer.classList.add('hide'); // hide answer
+  Element.Footer.classList.add('hide'); // hide Footer
+  const question = questions[q]; // select a question
+  Element.Question.textContent = question.question; // put the question into the frame
+  
   if (question.options[0] === 0) {
-    buttonA.classList.remove('descriptive');
-    buttonB.classList.remove('descriptive');
-    buttonA.textContent = '✗';
-    buttonB.textContent = '✓';
+    Button.A.classList.remove('descriptive');
+    Button.B.classList.remove('descriptive');
+    Button.A.textContent = '✗';
+    Button.B.textContent = '✓';
   } else {
-    buttonA.classList.add('descriptive');
-    buttonB.classList.add('descriptive');
-    buttonA.textContent = question.options[0];
-    buttonB.textContent = question.options[1];
+    Button.A.classList.add('descriptive');
+    Button.B.classList.add('descriptive');
+    Button.A.textContent = question.options[0];
+    Button.B.textContent = question.options[1];
   }
+  
+  Scene.Question.classList.remove('hide'); // show question and options
 }
+
+let yes = 0;
+let meh = 0;
 
 function answer(a) {
+  
+  Scene.Question.classList.add('hide');
+  
+  const icon = document.querySelector('div.assertive div');
+  icon.classList.remove('right', 'wrong');
+  icon.classList.add(questions[q].answer === 0 ? 'wrong' : 'right');
+  icon.textContent = questions[q].answer === 0 ? '✗' : '✓';
+
+  const assertive = document.querySelector('div.assertive p');
+  assertive.textContent = questions[q].question;
+
+  const explanation = document.querySelector('p.explanation');
+  explanation.textContent = questions[q].explanation;
+
+  const response = document.querySelector('p.response');
   if (a === questions[q].answer) {
-    alert('RIGHT!');
+    meh = 0;
+    response.textContent = right[yes++] || right[5];
   } else {
-    alert('WRONG');
+    yes = 0;
+    response.textContent = wrong[meh++] || wrong[5];
   }
+
+  Button.Footer.textContent = 'Próxima';
+  Scene.Question.classList.add('hide');
+  Scene.Answer.classList.remove('hide');
+  Element.Footer.classList.remove('hide');
 }
 
-buttonA.addEventListener('click', e => answer(0));
-buttonB.addEventListener('click', e => answer(1));
+Button.A.addEventListener('click', e => answer(0));
+Button.B.addEventListener('click', e => answer(1));

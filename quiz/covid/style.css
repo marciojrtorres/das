@@ -10,6 +10,11 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 
+.hide  {
+  display: none !important;
+}
+
+
 div#container {
   display: flex;
   height: 100%;
@@ -39,6 +44,7 @@ main {
 
 footer {
   /* background-color: blanchedalmond; */
+  margin-top: 10px;
   padding: 10px;
 }
 
@@ -55,12 +61,89 @@ button.next {
 
 div#home {
   display: flex;
+  /* display: none; */
   height: 100%;
   flex-direction: column;
   justify-content: space-around;
   box-sizing: border-box;
   padding: 10px;
 }
+
+div#question  {
+  display: flex;
+  /* display: none; */
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+div#answer {
+  display: flex;
+  /* display: none; */
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 10px;
+  background-color: #FFF1CE;
+  border-radius: 25px;
+  text-align: center;
+  font-size: 14pt;
+}
+
+div#finale {
+  display: flex;
+}
+
+div.assertive {
+  display: flex;
+  
+}
+
+div.assertive * {
+  margin: 0;
+  padding: 0;
+}
+
+div.assertive div {
+  border-radius: 50%;
+  padding: 0;
+  display: inline-block;
+  border: none;
+  height: 90px;
+  width: 90px;
+  font-size: 82px;
+  box-sizing: border-box;
+}
+
+div.assertive div.right {
+  background-color: #CCF6AA;
+  color: #015009;
+}
+
+div.assertive div.wrong {
+  background-color: #F6C6AA;
+  color: #B21E15;
+}
+
+div.assertive p {
+  flex: 1;
+  margin-left: 10px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  font-style: italic;
+}
+
+div#answer p.response {
+  font-weight: bold;
+  font-size: 20pt;
+}
+
 
 div#home * {
   margin: 0;
@@ -78,19 +161,6 @@ div#home p.lide {
 
 div#home p:last-child {
   font-size: 18px;
-}
-
-div#finale {
-  display: none;
-}
-
-div#question  {
-  display: none;
-  height: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 10px;
 }
 
 div#question div#box {
@@ -114,7 +184,7 @@ div#question div#buttons {
   align-items: flex-end;
 }
 
-div#question div#buttons button {
+.option {
   border-radius: 50%;
   padding: 0;
   display: block;
@@ -127,12 +197,12 @@ div#question div#buttons button {
   outline: none;
 }
 
-div#question div#buttons button.a {
+.option.a {
   background-color: #F6C6AA;
   color: #B21E15;
 }
 
-div#question div#buttons button.b {
+.option.b {
   background-color: #CCF6AA;
   color: #015009;
 }
@@ -140,3 +210,4 @@ div#question div#buttons button.b {
 div#question div#buttons button.descriptive{
   font-size: 16px;
 }
+
