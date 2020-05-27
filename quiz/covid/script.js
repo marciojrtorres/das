@@ -122,9 +122,9 @@ function finale() {
   const box = document.querySelector('div#finale div');
   box.style.backgroundColor = grade >= 3 ? noColor : (grade >= 1.5 ? soColor : okColor);
 
-  const okMsg = 'Muito bem! Você tem informações atualizas. Compartilhe seus conhecimentos com as pessoas que estão próximas à você.'
+  const okMsg = 'Muito bem! Você tem informações atualizadas. Compartilhe seus conhecimentos com as pessoas que estão próximas à você.'
   const soMsg = 'A COVID-19 é muito nova e precisamos ficar atualizados.'
-  const noMsg = 'As informações sobre a COVID estão sendo amplamente divulgadas, procure se atualizar.'
+  const noMsg = 'As informações sobre a COVID-19 estão sendo amplamente divulgadas, procure se atualizar.'
 
   const lastWord = document.querySelector('div#finale p:last-child');
   lastWord.textContent = grade >= 3 ?
@@ -139,7 +139,7 @@ function finale() {
     Button.Footer.addEventListener('click', function(e) {
       navigator.share({
         title: 'Quiz//COVID-19//DAS-FURG',
-        text: 'Faça o Quiz da Direção de Atenção à Saúde e teste seus conhecimentos sobre a COVID-19.',
+        text: 'Faça o Quiz da DAS/PROGEP/FURG e teste seus conhecimentos sobre a COVID-19.',
         url: 'https://marciojrtorres.github.io/das/quiz/covid/',
       });
     });
