@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-
 html, body {
   height: 100%;
   padding: 0;
@@ -13,7 +12,6 @@ html, body {
 .hide  {
   display: none !important;
 }
-
 
 div#container {
   display: flex;
@@ -51,7 +49,7 @@ footer {
 button.next {
   display: block;
   border-radius: 10px;
-  box-shadow: 0px 0px 6px darkgreen ;
+  box-shadow: 0px 0px 6px darkgreen;
   border: 1px solid green;
   background-color: #CCF6AA;
   height: 50px;
@@ -75,9 +73,24 @@ div#finale div {
   display: flex;
   width: 120px;
   height: 120px;
-  background-color: #CCF6AA;
+  background-color: silver;
   align-items: center;
   justify-content: center;
+}
+
+div#finale div.ok-color {
+  background-color: #CCF6AA;
+  border: 2px solid #015009;
+}
+
+div#finale div.so-color {
+  background-color: #FAFFC3;
+  border: 2px solid #CACFA3;
+}
+
+div#finale div.no-color {
+  background-color: #F6C6AA;
+  border: 2px solid #B21E15
 }
 
 div#finale p {
@@ -124,6 +137,7 @@ div#answer {
   padding: 10px;
   margin: 10px;
   background-color: #FFF1CE;
+  border: 2px solid #CFC1AE;
   border-radius: 25px;
   text-align: center;
   font-size: 14pt;
@@ -146,22 +160,26 @@ div.assertive * {
 div.assertive div {
   border-radius: 50%;
   padding: 0;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   height: 90px;
   width: 90px;
-  font-size: 82px;
+  font-size: 54px;
   box-sizing: border-box;
 }
 
 div.assertive div.right {
   background-color: #CCF6AA;
   color: #015009;
+  border: 2px solid #015009;
 }
 
 div.assertive div.wrong {
   background-color: #F6C6AA;
   color: #B21E15;
+  border: 2px solid #B21E15;
 }
 
 div.assertive p {
@@ -199,6 +217,7 @@ div#home p:last-child {
 
 div#question div#box {
   background-color: #FFF1CE;
+  border: 2px solid #CFC1AE;
   border-radius: 25px;
   display: flex;
   justify-content: center;
@@ -226,7 +245,7 @@ div#question div#buttons {
   background-color: grey;
   height: 140px;
   width: 140px;
-  font-size: 82px;
+  font-size: 68px;
   box-sizing: border-box;  
   outline: none;
 }
@@ -234,11 +253,15 @@ div#question div#buttons {
 .option.a {
   background-color: #F6C6AA;
   color: #B21E15;
+  box-shadow: 0px 0px 6px #A20E05;
+  border: 1px solid #A20E05;
 }
 
 .option.b {
   background-color: #CCF6AA;
   color: #015009;
+  box-shadow: 0px 0px 6px #013007;
+  border: 1px solid #015009;
 }
 
 div#question div#buttons button.descriptive{

@@ -84,7 +84,7 @@ function answer(a) {
   assertive.textContent = questions[q].question;
 
   const explanation = document.querySelector('p.explanation');
-  explanation.textContent = questions[q].explanation;
+  explanation.innerHTML = questions[q].explanation;
 
   const response = document.querySelector('p.response');
   if (a === questions[q].answer) {
@@ -112,15 +112,11 @@ function finale() {
   
   const total = document.querySelector('div#finale div span:last-child');
   total.textContent = `/${questions.length}`;
-
-  const okColor = '#CCF6AA';
-  const soColor = '#FAFFC3';
-  const noColor = '#F6C6AA';
-
+  
   const grade = questions.length / points;
 
   const box = document.querySelector('div#finale div');
-  box.style.backgroundColor = grade >= 3 ? noColor : (grade >= 1.5 ? soColor : okColor);
+  box.classList.add(grade >= 3 ? 'no-color' : (grade >= 1.5 ? 'so-color' : 'ok-color'));
 
   const okMsg = 'Muito bem! Você tem informações atualizadas. Compartilhe seus conhecimentos com as pessoas que estão próximas à você.'
   const soMsg = 'A COVID-19 é muito nova e precisamos ficar atualizados.'
@@ -138,7 +134,7 @@ function finale() {
     Button.Footer.classList.add('share');
     Button.Footer.addEventListener('click', function(e) {
       navigator.share({
-        title: 'Quiz//COVID-19//DAS-FURG',
+        title: 'Quiz COVID-19 DAS/PROGEP/FURG',
         text: 'Faça o Quiz da DAS/PROGEP/FURG e teste seus conhecimentos sobre a COVID-19.',
         url: 'https://marciojrtorres.github.io/das/quiz/covid/',
       });

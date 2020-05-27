@@ -45,7 +45,7 @@ export const questions = [
     question: 'Devo procurar atendimento de saúde caso apresente febre alta e falta de ar.',
     options: [0, 1],
     answer: 1,
-    explanation: 'Procure atendimento se estiver com sintomas graves, como dificuldade para respirar e febre alta (a partir de 39°C). Além disso, se tiveres dúvidas, podes acessar a TeleCovid-19 (0800-642-4650) na cidade de Rio Grande.'
+    explanation: 'Procure atendimento se estiver com sintomas graves, como dificuldade para respirar e febre alta (a partir de 39°C). Além disso, se tiveres dúvidas, podes acessar a <a href="tel:08006424650">TeleCovid-19 (0800-642-4650)</a> na cidade de Rio Grande/RS.'
   },
   {
     question: 'Se eu tiver apenas sintomas leves, semelhantes a um resfriado, posso sair de casa.',
