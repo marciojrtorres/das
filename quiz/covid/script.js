@@ -112,7 +112,7 @@ function finale() {
   
   const total = document.querySelector('div#finale div span:last-child');
   total.textContent = `/${questions.length}`;
-  
+
   const grade = questions.length / points;
 
   const box = document.querySelector('div#finale div');
@@ -130,7 +130,7 @@ function finale() {
   
   if (navigator.share) {
     Button.Footer.removeEventListener('click', nextQuestion);
-    Button.Footer.textContent = 'Compartilhar esse Quiz!'
+    Button.Footer.textContent = 'Compartilhar este Quiz!'
     Button.Footer.classList.add('share');
     Button.Footer.addEventListener('click', function(e) {
       navigator.share({
