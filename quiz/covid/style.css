@@ -59,6 +59,38 @@ button.next {
   outline: none;
 }
 
+div#finale {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+div#finale div {
+  display: flex;
+  width: 120px;
+  height: 120px;
+  background-color: #CCF6AA;
+  align-items: center;
+  justify-content: center;
+}
+
+div#finale p {
+  text-align: center;
+  font-size: 22px;
+}
+
+div#finale div span:first-child {
+  font-size: 56px;
+}
+
+div#finale h2 {
+  font-size: 32px;
+}
+
 div#home {
   display: flex;
   /* display: none; */

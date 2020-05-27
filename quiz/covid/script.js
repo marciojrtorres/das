@@ -33,17 +33,24 @@ const comecar = e => {
   nextQuestion();
 };
 
+Scene.Home.classList.remove('hide');
+Element.Footer.classList.remove('hide');
 Button.Footer.addEventListener('click', comecar);
 
 let q = -1;
 
 function nextQuestion() {
   q += 1; // next question
+
   Scene.Home.classList.add('hide'); // hide Home
   Scene.Answer.classList.add('hide'); // hide answer
   Element.Footer.classList.add('hide'); // hide Footer
+  
+  if (q == questions.length) return finale();
+  
   const question = questions[q]; // select a question
   Element.Question.textContent = question.question; // put the question into the frame
+
   
   if (question.options[0] === 0) {
     Button.A.classList.remove('descriptive');
@@ -62,6 +69,7 @@ function nextQuestion() {
 
 let yes = 0;
 let meh = 0;
+let points = 0;
 
 function answer(a) {
   
@@ -80,6 +88,7 @@ function answer(a) {
 
   const response = document.querySelector('p.response');
   if (a === questions[q].answer) {
+    points++;
     meh = 0;
     response.textContent = right[yes++] || right[5];
   } else {
@@ -95,3 +104,44 @@ function answer(a) {
 
 Button.A.addEventListener('click', e => answer(0));
 Button.B.addEventListener('click', e => answer(1));
+
+function finale() {
+
+  const pontos = document.querySelector('div#finale div span:first-child');
+  pontos.textContent = points;
+  
+  const total = document.querySelector('div#finale div span:last-child');
+  total.textContent = `/${questions.length}`;
+
+  const okColor = '#CCF6AA';
+  const soColor = '#FAFFC3';
+  const noColor = '#F6C6AA';
+
+  const grade = questions.length / points;
+
+  const box = document.querySelector('div#finale div');
+  box.style.backgroundColor = grade >= 3 ? noColor : (grade >= 1.5 ? soColor : okColor);
+
+  const okMsg = 'Muito bem! Você tem informações atualizas. Compartilhe seus conhecimentos com as pessoas que estão próximas à você.'
+  const soMsg = 'A COVID-19 é muito nova e precisamos ficar atualizados.'
+  const noMsg = 'As informações sobre a COVID estão sendo amplamente divulgadas, procure se atualizar.'
+
+  const lastWord = document.querySelector('div#finale p:last-child');
+  lastWord.textContent = grade >= 3 ?
+    noMsg : (grade >= 1.5 ? soMsg : okMsg);
+  
+  Scene.Finale.classList.remove('hide');
+  
+  if (navigator.share) {
+    Button.Footer.removeEventListener('click', nextQuestion);
+    Button.Footer.addEventListener('click', function(e) {
+      navigator.share({
+        title: 'Quiz//COVID-19//DAS-FURG',
+        text: 'Faça o Quiz da Direção de Atenção à Saúde e teste seus conhecimentos sobre a COVID-19.',
+        url: 'https://marciojrtorres.github.io/das/quiz/covid/',
+      });
+    });
+    Element.Footer.classList.remove('hide');
+  }
+
+}
