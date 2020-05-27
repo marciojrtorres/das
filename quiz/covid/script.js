@@ -134,6 +134,8 @@ function finale() {
   
   if (navigator.share) {
     Button.Footer.removeEventListener('click', nextQuestion);
+    Button.Footer.textContent = 'Compartilhar esse Quiz!'
+    Button.Footer.classList.add('share');
     Button.Footer.addEventListener('click', function(e) {
       navigator.share({
         title: 'Quiz//COVID-19//DAS-FURG',
