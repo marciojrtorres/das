@@ -20,6 +20,17 @@ div#container {
   justify-content: space-between;
 }
 
+
+@media screen and (min-width: 600px) {
+  div#container > main, div#container > footer {
+    max-width: 600px;
+    align-self: center;
+  }
+  div#container > footer {
+    width: 580px;
+  }
+}
+
 header {
   height: 90px;
   background-color: beige;

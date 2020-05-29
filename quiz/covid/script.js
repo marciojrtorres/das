@@ -51,7 +51,6 @@ function nextQuestion() {
   const question = questions[q]; // select a question
   Element.Question.textContent = question.question; // put the question into the frame
 
-  
   if (question.options[0] === 0) {
     Button.A.classList.remove('descriptive');
     Button.B.classList.remove('descriptive');
