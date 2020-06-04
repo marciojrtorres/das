@@ -135,7 +135,7 @@ function finale() {
       navigator.share({
         title: 'Quiz COVID-19 DAS/PROGEP/FURG',
         text: 'Faça o Quiz da DAS/PROGEP/FURG e teste seus conhecimentos sobre a COVID-19.',
-        url: 'https://marciojrtorres.github.io/das/quiz/covid/',
+        url: 'https://das-progep-furg.netlify.app/quiz/covid/',
       });
     });
     Element.Footer.classList.remove('hide');
