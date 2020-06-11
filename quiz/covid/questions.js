@@ -1,9 +1,9 @@
 export const questions = [
   {
     question: 'O coronavírus pode ser transmitido através de um aperto de mão.',
-    options: [0, 1],
+    options: ['', ''],
     answer: 1,
-    explanation: 'O coronavírus se transmite por gotículas de saliva através do espirro,tosse ou catarro,que pode ocorrer, por exemplo, por aperto de mão ou toque e contato com objetos e superfícies contaminadas.'
+    explanation: 'O coronavírus se transmite por gotículas de saliva através do espirro, tosse ou catarro, que pode ocorrer, por exemplo, por aperto de mão ou toque e contato com objetos e superfícies contaminadas.'
   },
   {
     question: 'Para evitar a transmissão do coronavírus, não é recomendado tomar chimarrão.',
@@ -111,8 +111,8 @@ export const questions = [
     explanation: 'A máscara deve ficar de molho por 30 minutos, após esfregar, enxaguar e secar bem, preferencialmente com ferro.'
   },
   {
-    question: 'Para uma lavagem de mãos ser eficaz, o tempo de duração deve ser, pelo menos:',
-    options: ['40 segundos', '15 segundos'],
+    question: 'Para uma lavagem de mãos ser eficaz, o tempo de duração deve ser de 15 segundos.',
+    options: [0, 1],
     answer: 0,
     explanation: 'Uma boa lavagem de mãos deve durar pelo menos 40 segundos. Lembre-se de esfregar bem o dorso, entre os dedos, o polegar, debaixo das unhas e o punho.'
   },
